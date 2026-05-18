@@ -1,7 +1,5 @@
 # sensenova-image-skill
 
-**English** | [中文](README_zh.md)
-
 Claude Code skill for image generation and understanding via the SenseNova platform.
 
 ## 功能
@@ -24,7 +22,7 @@ git clone https://github.com/SAUhongt/sensenova-image-skill.git ~/.claude/skills
 
 首次使用前需配置 API Key：
 
-1. 访问 [SenseNova 平台](https://token.sensenova.cn) 获取 API Key
+1. 访问 [SenseNova 平台](https://www.sensenova.cn/) 获取 API Key
 2. 在 Claude Code 中运行：
 
 ```

@@ -25,7 +25,7 @@ function checkApiKey() {
     console.error("❌ 未配置 SENSENOVA_API_KEY 环境变量。");
     console.error("");
     console.error("请按以下步骤配置:");
-    console.error("  1. 访问 https://token.sensenova.cn 获取 API Key");
+    console.error("  1. 访问 https://www.sensenova.cn/ 获取 API Key");
     console.error("  2. 在 Claude Code 中运行:");
     console.error("     /update-config set SENSENOVA_API_KEY=<你的key>");
     console.error("");

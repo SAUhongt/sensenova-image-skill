@@ -31,7 +31,7 @@ echo $SENSENOVA_API_KEY
 
 引导用户按以下步骤操作：
 
-1. 访问 https://token.sensenova.cn 获取 API Key
+1. 访问 https://www.sensenova.cn/ 获取 API Key
 2. 在 Claude Code 中运行：
 
 ```
