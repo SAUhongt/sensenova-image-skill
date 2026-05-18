@@ -1,8 +1,8 @@
 # sensenova-image-skill
 
-Claude Code skill for image generation and understanding via the SenseNova platform.
+基于商汤 SenseNova 平台的 Claude Code skill，提供图像生成与理解能力。
 
-> **Note:** The SenseNova API is currently free during its public beta period. [Get your API key here](https://www.sensenova.cn/).
+> SenseNova API 公测期间免费调用。[前往获取 API Key](https://www.sensenova.cn/)。
 
 ## 功能
 
