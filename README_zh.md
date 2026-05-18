@@ -1,14 +1,14 @@
 # sensenova-image-skill
 
-**English** | [中文](README_zh.md)
+[English](README.md) | **中文**
 
-Claude Code skill for image generation and understanding via the SenseNova platform.
+Claude Code skill，用于商汤 SenseNova 平台的图像生成与理解。
 
 ## 功能
 
 | 能力 | 模型 | 说明 |
 |------|------|------|
-| **图像生成** | `sensenova-u1-fast` | 将文字描述转化为专业信息图（Infographics），支持 11 种尺寸/比例 |
+| **图像生成** | `sensenova-u1-fast` | 将文字描述转化为专业信息图，支持 11 种尺寸/比例 |
 | **图像理解** | `sensenova-6.7-flash-lite` | 多模态视觉语言模型，描述和分析图片内容 |
 
 ## 安装
@@ -18,7 +18,7 @@ Claude Code skill for image generation and understanding via the SenseNova platf
 git clone https://github.com/SAUhongt/sensenova-image-skill.git ~/.claude/skills/sensenova-image
 ```
 
-或直接下载 zip 解压到 `~/.claude/skills/sensenova-image/`。
+或下载 zip 解压到 `~/.claude/skills/sensenova-image/`。
 
 ## 配置
 
@@ -31,7 +31,7 @@ git clone https://github.com/SAUhongt/sensenova-image-skill.git ~/.claude/skills
 /update-config set SENSENOVA_API_KEY=<你的key>
 ```
 
-或手动在 `~/.claude/settings.json` 中添加：
+或手动在 `~/.claude/settings.json` 的 `env` 中添加：
 
 ```json
 {
@@ -41,7 +41,7 @@ git clone https://github.com/SAUhongt/sensenova-image-skill.git ~/.claude/skills
 }
 ```
 
-未配置时，脚本会自动提示配置步骤，不会发送任何请求。
+未配置时，脚本会自动终止并打印中文配置指引，不会发送任何请求。
 
 ## 用法
 
@@ -53,11 +53,18 @@ git clone https://github.com/SAUhongt/sensenova-image-skill.git ~/.claude/skills
 - "把这段内容做成海报"
 - "生成一张关于 XX 的数据可视化图"
 
-Claude 会自动编排 prompt 并调用生成脚本。也可手动使用脚本：
+Claude 会自动编排 prompt 并调用生成脚本。也可手动使用：
 
 ```bash
 node scripts/generate_image.js --prompt "描述文字" --size 2752x1536
 ```
+
+| 参数 | 说明 | 默认值 |
+|------|------|--------|
+| `--prompt <text>` | 图像描述文本 | — |
+| `--file <path>` | 从文件读取 prompt | — |
+| `--size <WxH>` | 图像尺寸 | 2752x1536 |
+| `--n <num>` | 生成数量 | 1 |
 
 ### 图像理解
 
@@ -78,16 +85,20 @@ node scripts/describe_image.js --url "图片URL" "可选问题"
 | 1536x2752 | 9:16 | 手机竖屏 |
 | 1664x2496 | 2:3 | 海报竖版 |
 | 3072x1376 | 21:9 | 超宽 Banner |
-| ... | | 共 11 种 |
-
-完整列表见 `references/api-reference.md`。
+| 2496x1664 | 3:2 | 横版海报 |
+| 1760x2368 | 3:4 | 竖版信息图 |
+| 2368x1760 | 4:3 | 横版信息图 |
+| 1824x2272 | 4:5 | 社交媒体竖版 |
+| 2272x1824 | 5:4 | 社交媒体横版 |
+| 1344x3136 | 9:21 | 超长竖版 |
 
 ## 文件结构
 
 ```
 sensenova-image/
 ├── SKILL.md                          # Skill 主文件
-├── README.md
+├── README.md                         # 英文说明
+├── README_zh.md                      # 中文说明
 ├── scripts/
 │   ├── generate_image.js             # 生图脚本
 │   └── describe_image.js             # 识图脚本
