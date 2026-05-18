@@ -2,6 +2,8 @@
 
 Claude Code skill for image generation and understanding via the SenseNova platform.
 
+> **Note:** The SenseNova API is currently free during its public beta period. [Get your API key here](https://www.sensenova.cn/).
+
 ## 功能
 
 | 能力 | 模型 | 说明 |
